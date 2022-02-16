@@ -1,0 +1,10 @@
+
+<h1 class="title display-3">The Gossip Project</h1>
+
+<%Gossip.all.each do |gossip|%>
+    <div class="goss">
+        <h3 class="title"><%=gossip.title%></h3>
+        <p><%=User.all.find_by(id: gossip.user_id).first_name%> <%=User.all.find_by(id: gossip.user_id).last_name%></p>
+        <a href="gossip/<%=gossip.id%>"> potin</a>
+    </div>
+<%end%>

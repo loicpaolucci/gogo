@@ -1,0 +1,7 @@
+<br><br>
+<h2 class='gossip_title'><%=Gossip.all.find_by(id: params[:id].to_i).title%></h2>
+<p><%=Gossip.all.find_by(id: params[:id].to_i).content%></p>
+<p>Written By : <%=User.all.find_by(id: Gossip.all.find_by(id: params[:id].to_i).user_id).first_name%> <%=User.all.find_by(id: Gossip.all.find_by(id: params[:id].to_i).user_id).last_name%></p>
+<a href="user/<%=Gossip.all.find_by(id: params[:id].to_i).user_id%>">User</a>
+<br><br>
+<p>Creation Date : <%=Gossip.all.find_by(id: params[:id].to_i).created_at%></p>
